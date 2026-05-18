@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function BookHome() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-20">
@@ -17,7 +17,12 @@ export default function BookHome() {
         </div>
 
         <button
-          onClick={() => navigate("/book-test")}
+          onClick={() =>
+            document
+              .getElementById("book-test")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          // onClick={() => navigate("/book-test")}
           className="bg-white text-teal-600 px-8 py-4 rounded-full font-semibold text-lg"
         >
           Book Appointment
