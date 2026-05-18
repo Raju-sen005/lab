@@ -67,7 +67,7 @@ export default function BookTest() {
     try {
       setLoading(true);
 
-      await axios.post("http://localhost:5000/api/book-test", formData);
+      await axios.post("https://lab-back-j7ln.onrender.com/api/book-test", formData);
 
       alert("Test Booked Successfully");
 
