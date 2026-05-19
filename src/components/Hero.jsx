@@ -3,7 +3,6 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function Hero() {
-
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -15,7 +14,6 @@ export default function Hero() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-
     const { name, value, type, checked } = e.target;
 
     setFormData({
@@ -28,13 +26,9 @@ export default function Hero() {
     e.preventDefault();
 
     try {
-
       setLoading(true);
 
-      const response = await axios.post(
-        "http://localhost:5000/api/book-test",
-        formData
-      );
+      const response = await axios.post("https://lab-back-j7ln.onrender.com/api/book-test", formData);
 
       alert(response.data.message);
 
@@ -45,15 +39,11 @@ export default function Hero() {
         whatsappUpdates: true,
         authorized: true,
       });
-
     } catch (error) {
-
       console.log(error);
 
       alert("Something went wrong");
-
     } finally {
-
       setLoading(false);
     }
   };
@@ -61,7 +51,6 @@ export default function Hero() {
   return (
     <section className="bg-[#f3f4f6] py-5">
       <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-[2.4fr_0.8fr] gap-5">
-
         {/* LEFT BANNER */}
 
         <motion.div
@@ -85,7 +74,6 @@ export default function Hero() {
           transition={{ duration: 0.4 }}
           className="h-[360px] rounded-[24px] border-[2px] border-[#e8b13d] bg-[#f1f4f8] p-6"
         >
-
           {/* TITLE */}
 
           <h2 className="text-center text-[18px] font-bold text-[#0054a6]">
@@ -94,11 +82,7 @@ export default function Hero() {
 
           {/* FORM */}
 
-          <form
-            onSubmit={handleSubmit}
-            className="mt-3 space-y-4"
-          >
-
+          <form onSubmit={handleSubmit} className="mt-3 space-y-4">
             {/* NAME */}
 
             <input
@@ -168,8 +152,7 @@ export default function Hero() {
               />
 
               <span className="text-[12px] leading-4 text-[#111827]">
-                I authorize LabCare to contact me regarding
-                test details.
+                I authorize LabCare to contact me regarding test details.
               </span>
             </label>
 
