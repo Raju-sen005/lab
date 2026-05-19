@@ -32,7 +32,7 @@ export default function Hero() {
       setLoading(true);
 
       const response = await axios.post(
-        "https://lab-back-j7ln.onrender.com/api/book-test",
+        "http://localhost:5000/api/book-test",
         formData
       );
 
